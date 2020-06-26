@@ -1,6 +1,14 @@
 body{
     text-align: center;
+    font-family: 微軟正黑體;
+    background-image: url(bgcat.jpg);
+    background-attachment: scroll;
+
 }
-li{
+#cat{
     text-align: left;
+    font-family: 微軟正黑體;
+    font-weight: bold;
+    color: blue;
+    font-size: 25px;
 }

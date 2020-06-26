@@ -1,9 +1,13 @@
 let topicsArray = [
-    "尚未開學",
-    "國定假日",
-    "環境準備",
-    "隨機性",
-    "重複性"
+    "放假",
+    "放假",
+    "放假",
+    "放假",
+    "放假",
+    "放假",
+    "放假",
+    "補課",
+    "端午"
 ];
 
 let startDate = new Date();
@@ -15,4 +19,4 @@ function setMonthAndDay(startMonth, startDay){
     startDate.setSeconds(0);
 }
 
-setMonthAndDay(2,21);
+setMonthAndDay(5,2);
