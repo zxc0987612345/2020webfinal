@@ -5,7 +5,7 @@ $(document).ready(function(){
     ctx = $("#myCanvas")[0].getContext("2d");
 
     imgMain = new Image();
-    imgMain.src = "images/spriteSheet.png";
+    imgMain.src = "rpg/images/spriteSheet.png";
     currentImgMainX = 0;
     currentImgMainY = 0;
     imgMain.onload = function(){
@@ -13,9 +13,9 @@ $(document).ready(function(){
     }
 
     imgMountain = new Image();
-    imgMountain.src = "images/material.png";
+    imgMountain.src = "rpg/images/material.png";
     imgEnemy = new Image();
-    imgEnemy.src = "images/Enemy.png";
+    imgEnemy.src = "rpg/images/Enemy.png";
     imgMountain.onload = function(){
         imgEnemy.onload = function(){
             for(let x in mapArray){
