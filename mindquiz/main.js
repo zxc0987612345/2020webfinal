@@ -1,5 +1,7 @@
 $(document).ready(function(){
     let currentQuiz = null;
+    let ansval = 0;
+    let finalResult = null;
 
     $("#startButton").click(function(){
         if(currentQuiz==null){
@@ -22,16 +24,34 @@ $(document).ready(function(){
             $.each(
                 $(":radio"),function(i, val){
                     if(val.checked){
-                        if(isNaN(questions[currentQuiz].answers[i][1])){
-                            let finalResult = questions[currentQuiz].answers[i][1];
+                        if(currentQuiz>8){
+                            if(ansval<11){
+                                finalResult = "A";
+                            }
+                            else if(ansval>10&&ansval<14){
+                                finalResult = "B";
+                            }
+                            else if(ansval>13&&ansval<17){
+                                finalResult = "C";
+                            }
+                            else if(ansval>16&&ansval<20){
+                                finalResult = "D";
+                            }
+                            else if(ansval>19){
+                                finalResult = "E";
+                            }
                             $("#question").text(finalAnswers[finalResult][0]);
                             $("#options").empty();
                             $("#options").append(finalAnswers[finalResult][1] + "<br><br>");
                             currentQuiz=null;
                             $("#startButton").attr("value", "Restart");
+                            finalResult = null;
                         }
-                        else{
-                            currentQuiz = questions[currentQuiz].answers[i][1]-1;
+                        else if(currentQuiz<9){
+                            ansval = ansval+questions[currentQuiz].answers[i][1];
+
+                            console.log(ansval);
+                            currentQuiz++;
                             $("#question").text(questions[currentQuiz].question);
                             $("#options").empty();
                             for(let x=0; x<questions[currentQuiz].answers.length; x++){
